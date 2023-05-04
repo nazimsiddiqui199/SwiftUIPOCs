@@ -25,7 +25,13 @@ struct CircleGroupView: View {
               .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 80)
               .frame(width: 260, height: 260, alignment: .center)
       } // : ZStack
-      
+      .blur(radius: isAnimating ? 0: 10)
+      .opacity(isAnimating ? 1 : 0)
+      .scaleEffect(isAnimating ? 1 : 0.5)
+      .animation(.easeIn(duration: 0.5), value: isAnimating)
+      .onAppear {
+          isAnimating = true
+      }
   }
 }
 
