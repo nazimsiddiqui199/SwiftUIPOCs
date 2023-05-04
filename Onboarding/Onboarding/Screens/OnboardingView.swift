@@ -146,6 +146,7 @@ how much we put on giving
                             .onEnded({ _ in
                                 withAnimation(Animation.easeOut(duration: 0.5)){
                                     if buttonOffset > buttonWidth/2 {
+                                        playSound(sound: "chimeup", type: "mp3")
                                         buttonOffset = buttonWidth - 80
                                         isOnboardingActive = false
                                     } else {
